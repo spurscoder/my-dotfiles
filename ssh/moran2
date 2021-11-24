@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+set user work
+set host 192.168.100.196
+set password mthGH#123
+set timeout -1
+
+spawn ssh $user@$host
+expect "password:*"
+send "$password\r"
+interact
+expect eof

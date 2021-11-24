@@ -1,0 +1,15 @@
+Host gpu06
+    HostName
+    Port 22
+    User wangjp
+    IdentityFile ~/.ssh/yodao_id_rsa
+Host zj034
+    HostName
+    Port 22
+    User wangjp
+    IdentityFile ~/.ssh/yodao_id_rsa
+Host zj186
+    HostName
+    Port 22
+    User wangjp
+    IdentityFile ~/.ssh/yodao_id_rsa

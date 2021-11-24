@@ -1,0 +1,20 @@
+CMAKE_ROOT=/ssd1/exec/wangjp/tools/cmake-3.18.0/local
+CUDA_HOME=/usr/local/cuda
+HDF5_DIR=/usr/local/hdf5
+HOME=/home/wangjp
+LANG=en_US.UTF-8
+LC_CTYPE=en_US.UTF-8
+LD_LIBRARY_PATH=/ssd1/shared/local/cuda-11.1/targets/x86_64-linux/lib/:/usr/lib64:/usr/local/hdf5/lib:/usr/local/lib/:/usr/local/cuda/lib64:/usr/local/cuda/lib::/usr/local/cuda/lib64
+LIBRARY_PATH=:/usr/local/cuda/lib64/
+LM_PATH=/ssd1/exec/wangjp/commons/language_model/corpusdata.segment.cased.prune0234.arpa.binary
+PATH=/disk2/wangjp/.tools/doxygen/bin:/ssd1/exec/wangjp/tools/node-v0.10.24/bin:/usr/local/cuda/bin:/ssd1/slurm/bin:/usr/libexec/git-core:/ssd1/exec/wangjp/tools/cmake-3.18.0/local/bin:/ssd1/exec/wangjp/tools/maven/bin:/ssd1/exec/wangjp/tools/bin:/ssd1/exec/wangjp/tools/tmux/bin:/ssd1/exec/wangjp/tools/vim81/bin:/ssd1/exec/wangjp/tools/python3/bin:/ssd1/exec/wangjp/tools/miniconda/bin:/ssd1/exec/wangjp/tools/llvm/usr/local/bin:/usr/local/cuda/bin:/ssd1/slurm/bin:/usr/libexec/git-core:/ssd1/exec/wangjp/tools/cmake-3.18.0/local/bin:/ssd1/exec/wangjp/tools/maven/bin:/ssd1/exec/wangjp/tools/bin:/ssd1/exec/wangjp/tools/tmux/bin:/ssd1/exec/wangjp/tools/vim81/bin:/ssd1/exec/wangjp/tools/python3/bin:/ssd1/exec/wangjp/tools/miniconda/bin:/ssd1/exec/wangjp/tools/llvm/usr/local/bin:/ssd1/exec/wangjp/tools/zsh/bin:/usr/lib64/qt-3.3/bin:/home/wangjp/perl5/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/puppetlabs/bin
+TORCH_HOME=/ssd1/exec/wangjp/tools/torchhub/
+ZSH=/home/wangjp/.oh-my-zsh
+NODE_HOME=/ssd1/exec/wangjp/tools/node-v0.10.24
+
+# /ssd1/exec/wangjp/tools/gcc7 gcc7+cu10.1 有编译的bug
+# https://github.com/pytorch/vision/issues/1893#issuecomment-618873387
+# export GCC_HOME=/ssd1/exec/wulixin/softs/gcc-5.5
+export GCC_HOME=/ssd1/exec/wangjp/tools/gcc7 # gcc7+cu10.1 有编译的bug
+export LD_LIBRARY_PATH=${GCC_HOME}/lib:${GCC_HOME}/lib64:$LD_LIBRARY_PATH
+export PATH=${GCC_HOME}/bin:$PATH

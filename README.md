@@ -30,3 +30,10 @@ google-java-format-1.8-all-deps.jar
 maven == 3.6.2
 java-1.8.0-openjdk-1.8.0.65-3.b17.el7.x86_64
 ```
+
+```
+others
+cloc
+ack
+bazel
+```

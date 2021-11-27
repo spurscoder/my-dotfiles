@@ -1,6 +1,6 @@
 # dotfiles
 
-### tools version
+### Common Tools
 
 ```
 tmux == 3.0
@@ -31,9 +31,49 @@ maven == 3.6.2
 java-1.8.0-openjdk-1.8.0.65-3.b17.el7.x86_64
 ```
 
+### Others Tools
+
 ```
-others
+fzf
+bat
 cloc
+tree
 ack
+ripgrep
+fd
+tree
 bazel
+clang-format
+```
+
+### Python Tools
+
+```
+mypy
+black
+isort
+pytest
+pdb
+sphinx
+```
+
+### c++ Tools
+
+```
+clang-format
+valgrid
+gdb
+doxygen + sphinx
+cmake
+g++
+clang
+```
+
+### Python + C++
+
+```
+official tools
+cython
+cgi
+pybind11
 ```

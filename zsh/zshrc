@@ -205,3 +205,7 @@ alias tree="tree -I \"*pyc|__pycache__\" -v"
 # typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=blue'
 # ctrl-f
 
+#GOPATH
+export GOPATH=$HOME/coder/go
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

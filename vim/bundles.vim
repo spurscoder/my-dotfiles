@@ -49,6 +49,10 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'lfv89/vim-interestingwords'
 Bundle 'itchyny/vim-cursorword'
+Bundle 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Bundle 'junegunn/fzf.vim'
+Bundle 'airblade/vim-rooter'
+Bundle 'tpope/vim-eunuch'
 
 "----------------------------------------
 " Syntax/Indent for language enhancement

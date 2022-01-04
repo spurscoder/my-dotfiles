@@ -291,6 +291,10 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
+nnoremap ^ H
+nnoremap $ L
+vnoremap ^ H
+vnoremap $ L
 
 "------------------
 " Useful Functions

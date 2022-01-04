@@ -55,6 +55,7 @@ isort
 pytest
 pdb
 sphinx
+ranger-fm
 ```
 
 ### c++ Tools
@@ -76,4 +77,12 @@ official tools
 cython
 cgi
 pybind11
+```
+
+### 其他问题
+
+- `oh-my-zsh`进入某些git目录，会很卡顿，
+```
+git config --add oh-my-zsh.hide-status 1  # restore 0
+git config --add oh-my-zsh.hide-dirty 1  # restore 0
 ```

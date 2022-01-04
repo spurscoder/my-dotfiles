@@ -6,12 +6,10 @@ puts "$otp"
 spawn tsh login --proxy=teleport.corp.youdao.com --user=wangjp --ttl=108000
 
 expect "*user wangjp*"
-send "\n"
+send "-----------\n"
 
 expect "*OTP token*"
 send $otp\n
-
-spawn tsh ssh wangjp@gpu06
 
 interact
 

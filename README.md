@@ -9,7 +9,7 @@ vim == 8.1
 zsh == 5.6.2
 llvm == 7.0.0
 cmake == 3.18.0
-gcc == 7.3.0
+gcc == 7.3.0  # export GCC_HOME=/.../gcc5
 boost == 1.68.0
 node == 0.10.24
 
@@ -56,6 +56,7 @@ pytest
 pdb
 sphinx
 ranger-fm
+pre-commit
 ```
 
 ### c++ Tools
@@ -68,6 +69,8 @@ doxygen + sphinx
 cmake
 g++
 clang
+fmtlib
+googletest vs catch2
 ```
 
 ### Python + C++
@@ -85,4 +88,12 @@ pybind11
 ```
 git config --add oh-my-zsh.hide-status 1  # restore 0
 git config --add oh-my-zsh.hide-dirty 1  # restore 0
+```
+
+### mouse
+
+```
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 ```

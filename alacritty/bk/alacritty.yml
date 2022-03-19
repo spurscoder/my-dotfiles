@@ -1,0 +1,108 @@
+# # Colors (my-light-solarized)
+# colors:
+  # bright:
+    # black: '#002d39'
+    # blue: '#8caaae'
+    # cyan: '#64b1df'
+    # green: '#7498a3'
+    # magenta: '#ab6dd0'
+    # red: '#cb4b16'
+    # white: '#ebe4d1'
+    # yellow: '#76ab81'
+  # cursor:
+    # cursor: '#839496'
+    # text: '#073642'
+  # normal:
+    # black: '#0b3c49'
+    # blue: '#289bec'
+    # cyan: '#35b9af'
+    # green: '#a7bc19'
+    # magenta: '#d33682'
+    # red: '#dc322f'
+    # white: '#c6c0ae'
+    # yellow: '#b58900'
+  # primary:
+    # background: '#002b36'
+    # foreground: '#dbcbcb'
+  # selection:
+    # background: '#0b323c'
+    # text: '#db5031'
+
+# Colors (dark)
+colors:
+  bright:
+    black: '#4c5815'
+    blue: '#00bdeb'
+    cyan: '#00d6c3'
+    green: '#01b301'
+    magenta: '#406d9d'
+    red: '#a26700'
+    white: '#7be799'
+    yellow: '#93a602'
+  cursor:
+    cursor: '#7fe09a'
+    text: '#111d14'
+  normal:
+    black: '#0e2314'
+    blue: '#3d9ab9'
+    cyan: '#2370b5'
+    green: '#4dba42'
+    magenta: '#596c91'
+    red: '#933c33'
+    white: '#7d9c94'
+    yellow: '#85912d'
+  primary:
+    background: '#121c1a'
+    foreground: '#b3b0b0'
+  selection:
+    background: '#265232'
+    text: '#69ba7f'
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+font:
+  size: 14
+  normal:
+    family: PT Mono for Powerline
+    style: Regular
+  bold:
+    family: PT Mono for Powerline
+    style: Regular
+  use_thin_strokes: true
+  builtin_box_drawing: true
+
+env:
+  TERM: xterm-256color
+
+mouse:
+    hide_when_typing: true
+
+selection:
+    # When set to `true`, selected text will be copied to the primary
+    # clipboard.
+    save_to_clipboard: true
+
+key_bindings:
+  - { key: H,        mods: Command|Control, chars: "\x01\x08"                    }
+  - { key: L,        mods: Command|Control, chars: "\x01\x0C"                    }
+  - { key: J,        mods: Command|Control, chars: "\x01\x79"                    }
+  - { key: K,        mods: Command|Control, chars: "\x01\x75"                    }
+  - { key: Key1,     mods: Command|Control, chars: "\x01\x31"                    }
+  - { key: Key2,     mods: Command|Control, chars: "\x01\x32"                    }
+  - { key: Key3,     mods: Command|Control, chars: "\x01\x33"                    }
+  - { key: Key4,     mods: Command|Control, chars: "\x01\x34"                    }
+  - { key: Key5,     mods: Command|Control, chars: "\x01\x35"                    }
+  - { key: Key6,     mods: Command|Control, chars: "\x01\x36"                    }
+  - { key: Key7,     mods: Command|Control, chars: "\x01\x37"                    }
+  - { key: Key8,     mods: Command|Control, chars: "\x01\x38"                    }
+  - { key: Key9,     mods: Command|Control, chars: "\x01\x39"                    }
+  - { key: Tab,      mods: Command|Control, chars: "\x01\x09"                    }
+  - { key: Back,      mods: Command, chars: "\x15"                    }
+  - { key: Back,      mods: Alt, chars: "\x1b\x7f"                    }
+  - { key: Left,      mods: Alt, chars: "\x1bb"                    }
+  - { key: Right,      mods: Alt, chars: "\x1bf"                    }
+  - { key: K,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
+

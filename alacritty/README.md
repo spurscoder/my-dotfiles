@@ -6,6 +6,13 @@
     - 所以，我们可以在iterm2中将颜色设置好之后，转成alacrity可用的颜色即可
     - 转换方法：
         - 用了`iTerm2-Color-Schemes`仓库中的脚本将itermcolors转换成xrdb格式之后，再转换成alacrity可用的yml格式
+        ```
+        > ./tools/iterm2xrdb < ~/.config/iterm2/my3.itermcolors > tmp/my3.xrdb
+        <local> spurs@mac:~/coder/github/iTerm2-Color-Schemes ‹master*›
+        > python tools/xrdb2alacritty.py ./tmp -d tmp.al
+
+        > l ~/.config/alacritty/alacritty.yml
+        ```
 
 # 关于字体的问题
 

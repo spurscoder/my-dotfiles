@@ -185,7 +185,7 @@ tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_stat
 
 # status left style
 tmux_conf_theme_status_left_fg='#000000,#e4e4e4,#e4e4e4'  # black, white, white
-tmux_conf_theme_status_left_bg='#7edf99,#ff00af,#00afff'  # yellow, pink, white blue
+tmux_conf_theme_status_left_bg='#0087d7,#ff00af,#00afff'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
@@ -300,7 +300,7 @@ set -g status-position top
 set -g status-interval 60
 
 # swap-window and move left
-bind-key -r y swap-window -t -1\; select-window -t -1
+bind-key -r o swap-window -t -1\; select-window -t -1
 bind-key -r u swap-window -t +1\; select-window -t +1
 
 # unbind o # swap-window -t -1\; select-window -t -1

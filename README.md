@@ -97,3 +97,9 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 ```
+
+### hosts
+
+```
+sudo killall -HUP mDNSResponder
+```

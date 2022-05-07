@@ -20,3 +20,7 @@
     - 如：mac下面的目录是`~/Library/Fonts`
     - Linux也有对应的路径
 
+# 关于alacritty的字体设置
+
+- 可参考：https://github.com/alacritty/alacritty/issues/957
+- https://github.com/tonsky/FiraCode

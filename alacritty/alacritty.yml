@@ -119,6 +119,7 @@ key_bindings:
   - { key: Left,      mods: Alt, chars: "\x1bb"                    }
   - { key: Right,      mods: Alt, chars: "\x1bf"                    }
   - { key: K,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
+  - { key: Back, action:  ReceiveChar}  # 输入法退格问题
 
   # map H->^ L->$
   - { key: H,      mods: Shift,         mode: Vi|~Search, action: First }

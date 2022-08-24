@@ -1,62 +1,447 @@
-# # Colors (my-light-solarized)
-# colors:
-  # bright:
-    # black: '#002d39'
-    # blue: '#8caaae'
-    # cyan: '#64b1df'
-    # green: '#7498a3'
-    # magenta: '#ab6dd0'
-    # red: '#cb4b16'
-    # white: '#ebe4d1'
-    # yellow: '#76ab81'
-  # cursor:
-    # cursor: '#839496'
-    # text: '#073642'
-  # normal:
-    # black: '#0b3c49'
-    # blue: '#289bec'
-    # cyan: '#35b9af'
-    # green: '#a7bc19'
-    # magenta: '#d33682'
-    # red: '#dc322f'
-    # white: '#c6c0ae'
-    # yellow: '#b58900'
-  # primary:
-    # background: '#002b36'
-    # foreground: '#dbcbcb'
-  # selection:
-    # background: '#0b323c'
-    # text: '#db5031'
+### Define your various colour-schemes here, and then choose one with
+### the 'colors:' setting below.
+schemes:
 
-# Colors (dark)
-colors:
-  bright:
-    black: '#4c5815'
-    blue: '#00bdeb'
-    cyan: '#00d6c3'
-    green: '#01b301'
-    magenta: '#406d9d'
-    red: '#a26700'
-    white: '#7be799'
-    yellow: '#93a602'
-  cursor:
-    cursor: '#7fe09a'
-    text: '#111d14'
-  normal:
-    black: '#0e2314'
-    blue: '#3d9ab9'
-    cyan: '#2370b5'
-    green: '#4dba42'
-    magenta: '#596c91'
-    red: '#933c33'
-    white: '#7d9c94'
-    yellow: '#85912d'
-  primary:
-    background: '#121c1a'
-    foreground: '#b3b0b0'
-  selection:
-    background: '#265232'
-    text: '#69ba7f'
+  ### Edge (Light variant)
+  edge_light:	  &edge_light
+    primary:
+      background: "0xFAFAFA"
+      foreground: "0x4B505B"
+
+    normal:
+      black:	  "0x4B505B"
+      red:	  "0xD05858"
+      green:	  "0x608E32"
+      yellow:	  "0xBE7E05"
+      blue:	  "0x5079BE"
+      magenta:	  "0xB05CCC"
+      cyan:	  "0x3A8B84"
+      white:	  "0xFAFAFA"
+
+    bright:
+      black:	  "0x4B505B"
+      red:	  "0xD05858"
+      green:	  "0x608E32"
+      yellow:	  "0xBE7E05"
+      blue:	  "0x5079BE"
+      magenta:	  "0xB05CCC"
+      cyan:	  "0x3A8B84"
+      white:	  "0xFAFAFA"
+
+  ### Edge (Dark Default variant)
+  edge_dark_def:  &edge_dark_default
+    primary:
+      background: '0x1C1C1C'
+      foreground: '0xD9D8D8'
+
+    cursor:
+     text:	  '0x1C1C1C'
+     cursor:	  '0xE7E7E8'
+
+    normal:
+      black:	  '0x737371'
+      red:	  '0xFB2608'
+      green:      '0xA7E22E'
+      yellow:	  '0x66D9EE'
+      blue:	  '0x009DDC'
+      magenta:	  '0xFF55FF'
+      cyan:	  '0xFFD204'
+      white:      '0xD9D8D8'
+
+    bright:
+      black:      '0x737171'
+      red:        '0xFB2608'
+      green:      '0xA7E22E'
+      yellow:     '0x66D9EE'
+      blue:       '0x009DDC'
+      magenta:    '0xFF55FF'
+      cyan:       '0xFFD204'
+      white:      '0xFFFFFF'
+
+  ### Edge (Dark Aura variant)
+  edge_dark_aura:  &edge_dark_aura
+    primary:
+      background: "0x2B2D37"
+      foreground: "0xC5CDD9"
+
+    normal:
+      black:	  "0x363A49"
+      red:	  "0xEC7279"
+      green:	  "0xA0C980"
+      yellow:	  "0xDEB974"
+      blue:	  "0x6CB6EB"
+      magenta:	  "0xD38AEA"
+      cyan:	  "0x5DBBC1"
+      white:	  "0xC5CDD9"
+
+    bright:
+      black:	  "0x363A49"
+      red:	  "0xEC7279"
+      green:	  "0xA0C980"
+      yellow:	  "0xDEB974"
+      blue:	  "0x6CB6EB"
+      magenta:	  "0xD38AEA"
+      cyan:	  "0x5DBBC1"
+      white:	  "0xC5CDD9"
+
+  ### Edge (Dark Neon variant)
+  edge_dark_neon:  &edge_dark_neon
+    primary:
+      background: "0x2B2D3A"
+      foreground: "0xC5CDD9"
+
+    normal:
+      black:	  "0x363A4E"
+      red:	  "0xEC7279"
+      green:	  "0xA0C980"
+      yellow:	  "0xDEB974"
+      blue:	  "0x6CB6EB"
+      magenta:	  "0xD38AEA"
+      cyan:	  "0x5DBBC1"
+      white:	  "0xC5CDD9"
+
+    bright:
+      black:	  "0x363A4E"
+      red:	  "0xEC7279"
+      green:	  "0xA0C980"
+      yellow:	  "0xDEB974"
+      blue:	  "0x6CB6EB"
+      magenta:	  "0xD38AEA"
+      cyan:	  "0x5DBBC1"
+      white:	  "0xC5CDD9"
+
+  everforest_dark_hard: &everforest_dark_hard
+    primary:
+      background: '#2b3339'
+      foreground: '#d3c6aa'
+    normal:
+      black:   '#4b565c'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+    bright:
+      black:   '#4b565c'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+
+  everforest_dark_medium: &everforest_dark_medium
+    primary:
+      background: '#2f383e'
+      foreground: '#d3c6aa'
+    normal:
+      black:   '#4b565c'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+    bright:
+      black:   '#4b565c'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+
+  everforest_dark_soft: &everforest_dark_soft
+    primary:
+      background: '#323d43'
+      foreground: '#d3c6aa'
+    normal:
+      black:   '#4b565c'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+    bright:
+      black:   '#4b565c'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+
+  everforest_light_hard: &everforest_light_hard
+    primary:
+      background: '#fff9e8'
+      foreground: '#5c6a72'
+    normal:
+      black:   '#5c6a72'
+      red:     '#f85552'
+      green:   '#8da101'
+      yellow:  '#dfa000'
+      blue:    '#3a94c5'
+      magenta: '#df69ba'
+      cyan:    '#35a77c'
+      white:   '#dfddc8'
+    bright:
+      black:   '#5c6a72'
+      red:     '#f85552'
+      green:   '#8da101'
+      yellow:  '#dfa000'
+      blue:    '#3a94c5'
+      magenta: '#df69ba'
+      cyan:    '#35a77c'
+      white:   '#dfddc8'
+
+  everforest_light_medium: &everforest_light_medium
+    primary:
+      background: '#fdf6e3'
+      foreground: '#5c6a72'
+    normal:
+      black:   '#5c6a72'
+      red:     '#f85552'
+      green:   '#8da101'
+      yellow:  '#dfa000'
+      blue:    '#3a94c5'
+      magenta: '#df69ba'
+      cyan:    '#35a77c'
+      white:   '#dfddc8'
+    bright:
+      black:   '#5c6a72'
+      red:     '#f85552'
+      green:   '#8da101'
+      yellow:  '#dfa000'
+      blue:    '#3a94c5'
+      magenta: '#df69ba'
+      cyan:    '#35a77c'
+      white:   '#dfddc8'
+
+  everforest_light_soft: &everforest_light_soft
+    primary:
+      background: '#f8f0dc'
+      foreground: '#5c6a72'
+    normal:
+      black:   '#5c6a72'
+      red:     '#f85552'
+      green:   '#8da101'
+      yellow:  '#dfa000'
+      blue:    '#3a94c5'
+      magenta: '#df69ba'
+      cyan:    '#35a77c'
+      white:   '#dfddc8'
+    bright:
+      black:   '#5c6a72'
+      red:     '#f85552'
+      green:   '#8da101'
+      yellow:  '#dfa000'
+      blue:    '#3a94c5'
+      magenta: '#df69ba'
+      cyan:    '#35a77c'
+      white:   '#dfddc8'
+
+  my_light_solarized: &my_light_solarized
+    bright:
+      black: '#002d39'
+      blue: '#8caaae'
+      cyan: '#64b1df'
+      green: '#7498a3'
+      magenta: '#ab6dd0'
+      red: '#cb4b16'
+      white: '#ebe4d1'
+      yellow: '#76ab81'
+    cursor:
+      cursor: '#839496'
+      text: '#073642'
+    normal:
+      black: '#0b3c49'
+      blue: '#289bec'
+      cyan: '#35b9af'
+      green: '#a7bc19'
+      magenta: '#d33682'
+      red: '#dc322f'
+      white: '#c6c0ae'
+      yellow: '#b58900'
+    primary:
+      background: '#002b36'
+      foreground: '#dbcbcb'
+    selection:
+      background: '#0b323c'
+      text: '#db5031'
+
+  dark: &dark
+    bright:
+      black: '#4c5815'
+      blue: '#00bdeb'
+      cyan: '#00d6c3'
+      green: '#01b301'
+      magenta: '#406d9d'
+      red: '#a26700'
+      white: '#7be799'
+      yellow: '#93a602'
+    cursor:
+      cursor: '#7fe09a'
+      text: '#111d14'
+    normal:
+      black: '#0e2314'
+      blue: '#3d9ab9'
+      cyan: '#2370b5'
+      green: '#4dba42'
+      magenta: '#596c91'
+      red: '#933c33'
+      white: '#7d9c94'
+      yellow: '#85912d'
+    primary:
+      background: '#121c1a'
+      foreground: '#b3b0b0'
+    selection:
+      background: '#265232'
+      text: '#69ba7f'
+
+  Symfonic: &Symfonic
+    bright:
+      black: '#1b1d21'
+      blue: '#0084d4'
+      cyan: '#ccccff'
+      green: '#56db3a'
+      magenta: '#b729d9'
+      red: '#dc322f'
+      white: '#ffffff'
+      yellow: '#ff8400'
+    cursor:
+      cursor: '#dc322f'
+      text: '#ffffff'
+    normal:
+      black: '#000000'
+      blue: '#0084d4'
+      cyan: '#ccccff'
+      green: '#56db3a'
+      magenta: '#b729d9'
+      red: '#dc322f'
+      white: '#ffffff'
+      yellow: '#ff8400'
+    primary:
+      background: '#000000'
+      foreground: '#ffffff'
+    selection:
+      background: '#073642'
+      text: '#ffffff'
+
+  Cyberdyne: &Cyberdyne
+    bright:
+      black: '#2e2e2e'
+      blue: '#c2e3ff'
+      cyan: '#e6e7fe'
+      green: '#d6fcba'
+      magenta: '#ffb2fe'
+      red: '#ffc4be'
+      white: '#ffffff'
+      yellow: '#fffed5'
+    cursor:
+      cursor: '#00ff9c'
+      text: '#000000'
+    normal:
+      black: '#080808'
+      blue: '#0071cf'
+      cyan: '#6bffdd'
+      green: '#00c172'
+      magenta: '#ff90fe'
+      red: '#ff8373'
+      white: '#f1f1f1'
+      yellow: '#d2a700'
+    primary:
+      background: '#151144'
+      foreground: '#00ff92'
+    selection:
+      background: '#454d96'
+      text: '#f4f4f4'
+
+  my3: &my3
+    bright:
+      black: '#4c5815'
+      blue: '#00bdeb'
+      cyan: '#00d6c3'
+      green: '#01b301'
+      magenta: '#406d9d'
+      red: '#a26700'
+      white: '#7be799'
+      yellow: '#378100'
+    cursor:
+      cursor: '#7fe09a'
+      text: '#152834'
+    normal:
+      black: '#0e2213'
+      blue: '#3d9ab9'
+      cyan: '#2370b5'
+      green: '#4dba42'
+      magenta: '#596c91'
+      red: '#933c33'
+      white: '#7d9c94'
+      yellow: '#85912d'
+    primary:
+      background: '#121c1a'
+      foreground: '#b3b0b0'
+    selection:
+      background: '#265232'
+      text: '#69ba7f'
+
+  shusia: &shusia
+    primary:
+      background: "0x2d2a2e"
+      foreground: "0xe3e1e4"
+    normal:
+      black: "0x1a181a"
+      red: "0xf85e84"
+      green: "0x9ecd6f"
+      yellow: "0xe5c463"
+      blue: "0x7accd7"
+      magenta: "0xab9df2"
+      cyan: "0xef9062"
+      white: "0xe3e1e4"
+    bright:
+      black: "0x848089"
+      red: "0xf85e84"
+      green: "0x9ecd6f"
+      yellow: "0xe5c463"
+      blue: "0x7accd7"
+      magenta: "0xab9df2"
+      cyan: "0xef9062"
+      white: "0xe3e1e4"
+
+  maia: &maia
+    primary:
+      background: "0x273136"
+      foreground: "0xe1e2e3"
+    normal:
+      black: "0x1c1e1f"
+      red: "0xf76c7c"
+      green: "0x9cd57b"
+      yellow: "0xe3d367"
+      blue: "0x78cee9"
+      magenta: "0xbaa0f8"
+      cyan: "0xf3a96a"
+      white: "0xe1e2e3"
+    bright:
+      black: "0x82878b"
+      red: "0xf76c7c"
+      green: "0x9cd57b"
+      yellow: "0xe3d367"
+      blue: "0x78cee9"
+      magenta: "0xbaa0f8"
+      cyan: "0xf3a96a"
+      white: "0xe1e2e3"
+
+# Apply
+colors: *maia
+# colors: *Cyberdyne
 
 window:
   decorations: "Buttonless"
@@ -69,8 +454,8 @@ window:
   padding:
     x: 2
     y: 2
-  opacity: 1.0
-  # startup_mode: SimpleFullscreen
+  opacity: 0.9
+  startup_mode: Maximized
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -102,7 +487,7 @@ selection:
 key_bindings:
   - { key: H,        mods: Command|Control, chars: "\x01\x08"                    }
   - { key: L,        mods: Command|Control, chars: "\x01\x0C"                    }
-  - { key: J,        mods: Command|Control, chars: "\x01\x79"                    }
+  - { key: J,        mods: Command|Control, chars: "\x01\x6F"                    }
   - { key: K,        mods: Command|Control, chars: "\x01\x75"                    }
   - { key: Key1,     mods: Command|Control, chars: "\x01\x31"                    }
   - { key: Key2,     mods: Command|Control, chars: "\x01\x32"                    }
@@ -119,7 +504,7 @@ key_bindings:
   - { key: Left,      mods: Alt, chars: "\x1bb"                    }
   - { key: Right,      mods: Alt, chars: "\x1bf"                    }
   - { key: K,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
-  - { key: Back, action:  ReceiveChar}  # 输入法退格问题
+  - { key: Back, action:  ReceiveChar}
 
   # map H->^ L->$
   - { key: H,      mods: Shift,         mode: Vi|~Search, action: First }

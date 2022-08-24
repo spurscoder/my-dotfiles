@@ -117,6 +117,11 @@ realpath() {
 }
 
 alias cp="cp -i"
+alias alacritty="/Applications/Alacritty.app/Contents/MacOS/alacritty"
+alias vi="nvim"
+alias vim="nvim"
+alias vimdiff="nvim -d"
+
 
 # ctrl-r escape escape ctrl-s backspace
 #
@@ -130,3 +135,11 @@ alias cp="cp -i"
 
 #GOPATH
 export GOPATH=$HOME/coder/go
+
+export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/coder/go/bin:$PATH
+
+export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

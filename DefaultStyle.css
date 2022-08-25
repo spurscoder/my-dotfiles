@@ -1,0 +1,792 @@
+@charset 'UTF-8';
+@namespace d url(http://www.apple.com/DTDs/DictionaryService-1.0.rng);
+
+/*=====================================*/
+
+
+/* basics                              */
+
+
+/*=====================================*/
+
+:root {
+    --gray-text-light: rgb(99, 159, 238);
+    --gray-text-dark: rgb(99, 159, 238);
+    --gray-text-body: rgb(241, 233, 233);
+    --gray-border-light: rgb(152, 152, 157);
+    --gray-border-dark: rgb(99, 159, 238);
+    --gray-popup-dark: #ccc;
+    --inline-box-margin: .3em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--gray-text-body);
+    font-size: 12pt;
+    font-family: -apple-system;
+    margin: 1em .9em 1.5em .9em;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
+img {
+    border-radius: 3px;
+    display: block;
+    margin: 1em 0;
+    width: 100%;
+}
+
+.collinsbody {
+    display: block;
+    font-size: 84%;
+    line-height: 130%;
+    margin: 1.8em 0 4em;
+}
+
+h1 {
+    display: none;
+}
+
+
+/*=====================================*/
+
+
+/* head                                */
+
+
+/*=====================================*/
+
+.word_entry {
+    vertical-align: baseline;
+}
+
+.word_entry~.word_entry {
+    margin-top: 4em;
+}
+
+.word_key {
+    font-size: 1.7em;
+    pointer-events: none;
+}
+
+
+/* freq. stars */
+
+.word-frequency-img {
+    display: inline-block;
+    margin: 0 var(--inline-box-margin);
+    vertical-align: middle;
+}
+
+.level1::after {
+    content: "★☆☆☆☆";
+    zoom: .8;
+}
+
+.level2::after {
+    content: "★★☆☆☆";
+    zoom: .8;
+}
+
+.level3::after {
+    content: "★★★☆☆";
+    zoom: .8;
+}
+
+.level4::after {
+    content: "★★★★☆";
+    zoom: .8;
+}
+
+.level5::after {
+    content: "★★★★★";
+    zoom: .8;
+}
+
+
+/* pron: miscs */
+
+
+/*
+.word_entry > .pron::before,
+.word_entry > .pron::after {
+  content: "|";
+  color: var(--gray-text-light);
+  margin: 0 var(--inline-box-margin);
+}
+*/
+
+.var {
+    color: var(--gray-text-light);
+}
+
+.word_entry>.pron {
+    margin-left: var(--inline-box-margin);
+    margin-right: calc(2 * var(--inline-box-margin));
+}
+
+.pron {
+    display: list-items;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+
+.pron.type_uk,
+.pron.type_us {
+    pointer-events: none;
+    display: inline-block;
+}
+
+
+/* pron: us/uk indicator */
+
+.pron.type_uk:first-of-type::before {
+    content: 'BrE';
+    color: var(--gray-text-light);
+    margin-right: var(--inline-box-margin);
+}
+
+.pron.type_uk:not(:first-of-type) {
+    margin-left: var(--inline-box-margin);
+}
+
+.pron.type_uk+.pron.type_us,
+.pron.type_uk+audio+.pron.type_us {
+    margin-left: var(--inline-box-margin);
+}
+
+.pron>.pron.type_us::before {
+    content: 'AmE';
+    color: var(--gray-text-light);
+    margin: 0 var(--inline-box-margin);
+}
+
+.pron>.pron.type_us~.pron.type_us::before {
+    content: '';
+    margin-right: 0;
+}
+
+
+/* pron: speaker icons */
+
+.icon-speak-uk::after,
+.icon-speak-us::after {
+    content: url(img/volume_dark.svg);
+    display: inline-block;
+    margin-left: .5ex;
+    zoom: .7;
+}
+
+.icon-speak-uk:not(:last-of-type),
+.icon-speak-us:not(:last-of-type) {
+    margin-right: var(--inline-box-margin);
+}
+
+.pron.type_uk:empty::before,
+.pron.type_uk:empty::before {
+    content: none;
+}
+
+.pron.type_uk:empty+.icon-speak-uk,
+.pron.type_uk:empty+.icon-speak-us {
+    margin-left: calc(-1 * var(--inline-box-margin));
+}
+
+.icon-speak-form::after {
+    content: url(img/volume_dark.svg);
+    display: inline-block;
+    margin-left: .5ex;
+    margin-right: .5ex;
+    zoom: .7;
+}
+
+.icon-speak-uk,
+.icon-speak-us,
+.icon-speak-form {
+    cursor: pointer;
+}
+
+.form_inflected {
+    display: inline-block;
+}
+
+
+/*=====================================*/
+
+
+/* body                                */
+
+
+/*=====================================*/
+
+.collins_cobuild {
+    line-height: 130%;
+}
+
+.part_main,
+.part_list {
+    margin: 1.5em 0;
+}
+
+.part_list {
+    counter-reset: plist;
+}
+
+.part_list li {
+    counter-increment: plist;
+    left: 1.5em;
+    margin-right: 1.5em;
+    position: relative;
+}
+
+.part_list li::before {
+    content: counter(plist) '. ';
+    position: absolute;
+    left: -1.5em;
+}
+
+.part_main>h3 {
+    font-size: 100%;
+    margin: 1.5em 0;
+}
+
+.collins_content {
+    counter-reset: cpnum;
+}
+
+.collins_en_cn.example:not(:only-of-type) {
+    margin: 1.5em 0 1.5em 1.5em;
+    position: relative;
+    vertical-align: middle;
+}
+
+.collins_en_cn.example:not(:only-of-type)::before {
+    color: var(--gray-text-light);
+    content: counter(cpnum);
+    counter-increment: cpnum;
+    display: inline-block;
+    font-weight: bold;
+    left: -1.5em;
+    position: absolute;
+    text-align: left;
+    width: 1.5em;
+}
+
+.collins_en_cn.example>ul {
+    margin-top: .5em;
+}
+
+.example li:not(:last-of-type) {
+    margin: .5em 0;
+}
+
+.example li p:nth-child(1)::before {
+    content: '▸';
+    color: var(--gray-text-light);
+    font-size: 1em;
+    margin-right: .5em;
+}
+
+.example li p:nth-child(1) {
+    margin-left: 1.2em;
+    text-indent: -1em;
+}
+
+.example li p:nth-child(2) {
+    color: var(--gray-text-light);
+    margin-left: 1.2em;
+    margin-top: .2em;
+}
+
+.st {
+    color: var(--gray-text-light);
+    font-weight: bold;
+    font-variant-caps: small-caps;
+    margin-right: var(--inline-box-margin);
+}
+
+.st+.tips_box {
+    margin-left: 0;
+}
+
+.def_cn {
+    color: var(--gray-text-light);
+}
+
+.def_cn::before {
+    content: ' ';
+}
+
+.caption span:not([class]) {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+[chinese="tc"] {
+    font-variant-east-asian: traditional;
+}
+
+.tips_box,
+.tips_sentence {
+    color: var(--gray-text-light);
+    margin: 0 var(--inline-box-margin);
+}
+
+.synonym {
+    margin-top: .5em;
+    margin-left: 0;
+}
+
+.collins_en_cn.example:not(:only-of-type) .synonym {
+    margin-top: .5em;
+    margin-left: .3em;
+}
+
+.synonym>b:first-child {
+    color: var(--gray-text-light);
+    margin-right: var(--inline-box-margin);
+}
+
+.explain:not(.ref):not(:last-of-type)::after {
+    content: ',';
+    display: inline;
+    margin-right: var(--inline-box-margin);
+}
+
+.explain:only-of-type:not(.ref) {
+    margin: 0 var(--inline-box-margin);
+}
+
+b>a[class="explain"]::after {
+    content: '\A';
+    white-space: pre-line;
+}
+
+.st~b>a[class="explain"]::after {
+    content: none;
+}
+
+
+/*=====================================
+/* notes
+/*=====================================*/
+
+.note {
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px var(--gray-border-light);
+}
+
+.collins_content .note {
+    margin: 1.5em 0;
+    padding: .5em .5em .5em .9em;
+}
+
+.note .quotation {
+    counter-reset: nq;
+}
+
+.note>ul:not(:first-child) li {
+    margin-top: .5em;
+}
+
+.note.type-usage li p,
+.note.type-note li p {
+    margin-left: 0;
+    text-indent: 0;
+}
+
+.note.type-usage li p:first-of-type::before,
+.note.type-note li p:first-of-type::before {
+    content: none;
+}
+
+.note.type-usage li p:first-of-type,
+.note.type-note li p:first-of-type {
+    margin-bottom: .5em;
+}
+
+blockquote+.cit {
+    display: block;
+}
+
+.cit {
+    margin-top: .5em;
+}
+
+.cit:not(:only-of-type)::before {
+    color: var(--gray-text-light);
+    counter-increment: nq;
+    content: counter(nq);
+    position: absolute;
+    left: 2.5em;
+    text-align: left;
+}
+
+.cit:not(:only-of-type) {
+    margin-left: 2.5em;
+}
+
+.cit cite {
+    color: var(--gray-text-light);
+    display: block;
+}
+
+.quotation-caption {
+    color: var(--gray-text-light);
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+
+/*=====================================*/
+
+
+/* labels                              */
+
+
+/*=====================================*/
+
+
+/*.lbl.type-gram { display: none; }*/
+
+.lbl.type-gram {
+    font-style: italic;
+}
+
+.lbl {
+    color: var(--gray-text-light);
+}
+
+.type-subj,
+.type-register,
+.type-pragmatics {
+    text-transform: uppercase;
+}
+
+.synonym .lbl,
+small+small {
+    margin-left: var(--inline-box-margin);
+}
+
+.tips_sentence i+small {
+    margin-left: var(--inline-box-margin);
+}
+
+.subc {
+    color: var(--gray-text-light);
+    font-variant: small-caps;
+    font-style: italic;
+    margin-left: var(--inline-box-margin);
+}
+
+.subc::before {
+    content: '(';
+}
+
+.subc::after {
+    content: ')';
+}
+
+.also {
+    margin-right: var(--inline-box-margin);
+}
+
+.also>i {
+    margin-left: var(--inline-box-margin);
+}
+
+
+/*=====================================*/
+
+
+/* grammarInfo                         */
+
+
+/*=====================================*/
+
+
+/*.grammarInfo .caption { display: none; }*/
+
+.grammarInfo .caption {
+    font-weight: bold;
+}
+
+.grammarInfo>.caption .WordLink:not(:first-of-type)::before,
+.grammarInfo>.caption .WordPartnership:not(:first-of-type)::before,
+.grammarInfo>.caption .Thesaurus:not(:first-of-type)::before,
+.grammarInfo>.caption .WordOrder:not(:first-of-type)::before,
+.grammarInfo>.caption .VisualThesaurus:not(:first-of-type)::before,
+.grammarInfo>.caption .Usage:not(:first-of-type)::before,
+.grammarInfo>.caption .Pragmatics:not(:first-of-type)::before {
+    content: ' & ';
+}
+
+.grammarInfo,
+table {
+    margin: 2em 0;
+}
+
+.Title {
+    color: var(--gray-text-light);
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    box-shadow: 0 0 0 1px var(--gray-border-light);
+    border-radius: 3px;
+    border-style: hidden;
+    margin-top: 1em;
+    table-layout: fixed;
+    width: 100%;
+}
+
+td {
+    padding: .5em;
+}
+
+tr th:first-child,
+tr td:first-child {
+    width: 30%;
+    max-width: 30%;
+    min-width: 30%;
+}
+
+tr:first-child {
+    border-bottom: 1px solid var(--gray-border-light);
+}
+
+mark {
+    background-color: white;
+    font-size: 80%;
+    margin: 0 .2em;
+    padding: 0 3px;
+    width: 5px;
+}
+
+
+/*=====================================*/
+
+
+/* lookup popup.                       */
+
+
+/*=====================================*/
+
+html.apple_client-panel .pron.type_uk:empty,
+html.apple_client-panel .pron.type_us:empty,
+html.apple_client-panel .icon-speak-uk,
+html.apple_client-panel .icon-speak-us,
+html.apple_client-panel .icon-speak-form,
+html.apple_client-panel .form_inflected,
+html.apple_client-panel .part_list,
+html.apple_client-panel .note,
+html.apple_client-panel .image,
+html.apple_client-panel .grammarInfo {
+    display: none;
+}
+
+html.apple_client-panel .pron>.pron.type_us,
+html.apple_client-panel .pron>.pron.type_uk:not(:first-of-type) {
+    margin-left: var(--inline-box-margin);
+}
+
+html.apple_client-panel body,
+html.apple_client-panel .collinsbody,
+html.apple_client-panel .part_main,
+html.apple_client-panel .collins_en_cn,
+html.apple_client-panel .collins_en_cn.example {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+html.apple_client-panel body {
+    margin-top: -.5em;
+}
+
+html.apple_client-panel .word_key {
+    font-size: 1.2em;
+}
+
+html.apple_client-panel .word_entry>.pron::before,
+html.apple_client-panel .word_entry>.pron::after {
+    content: none;
+}
+
+
+/*=====================================*/
+
+
+/* front/back matter                   */
+
+
+/*=====================================*/
+
+.toc {
+    margin-left: 3em;
+}
+
+.front-back-matter div {
+    margin: 3em 0;
+}
+
+.front-back-matter h1 {
+    font-size: 1.5em;
+}
+
+.front-back-matter h2 {
+    font-size: 1.3em;
+}
+
+.front-back-matter h3 {
+    font-size: 1.1em;
+}
+
+.front-back-matter h1,
+.front-back-matter h2,
+.front-back-matter h3,
+.front-back-matter p {
+    display: block;
+    margin: 1em 0;
+}
+
+.front-back-matter {
+    counter-reset: fbmatter;
+}
+
+.front-back-matter>div {
+    counter-increment: fbmatter;
+}
+
+.front-back-matter>div>h1::before {
+    content: counter(fbmatter) '. ';
+}
+
+.front-back-matter def {
+    display: block;
+    margin: .5em 0 .5em 1em;
+}
+
+.front-back-matter sc {
+    font-variant: small-caps;
+}
+
+.front-back-matter ex {
+    font-style: italic;
+}
+
+.front-back-matter sc+b,
+.front-back-matter b+sc {
+    margin-left: .2em;
+}
+
+.front-back-matter note {
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px var(--gray-border-light);
+    display: block;
+    margin: 1em 0;
+    padding: .5em;
+}
+
+.front-back-matter note>h3 {
+    margin-top: .5em;
+}
+
+.front-back-matter note>p:last-child {
+    margin-bottom: .5em;
+}
+
+.front-back-matter posp {
+    font-weight: bold;
+}
+
+
+/*=====================================*/
+
+
+/* dark mode                           */
+
+
+/*=====================================*/
+
+@media (prefers-dark-interface) {
+    .icon-speak-uk::after,
+    .icon-speak-us::after,
+    .icon-speak-form::after {
+        display: inline-block;
+        content: url(img/volume_light.svg);
+        zoom: .7;
+        margin-left: .5ex;
+        margin-right: .5ex;
+    }
+    .word_entry>.pron::before,
+    .word_entry>.pron::after,
+    .pron.type_uk:first-of-type::before,
+    .pron>.pron.type_us::before,
+    .collins_en_cn.example:not(:only-of-type)::before,
+    .example li p:nth-child(1)::before,
+    .example li p:nth-child(2),
+    .note li p:nth-child(2),
+    .def_cn,
+    .st,
+    .var,
+    .tips_box,
+    .tips_sentence,
+    .synonym>b:first-child,
+    .lbl,
+    .subc,
+    .cit::before,
+    .quotation-caption,
+    .cit cite,
+    .Title {
+        color: var(--gray-text-dark);
+    }
+    /*.front-back-matter note,*/
+    .note,
+    table {
+        box-shadow: 0 0 0 1px var(--gray-border-dark);
+    }
+    tr:first-child {
+        border-bottom: 1px solid var(--gray-border-dark);
+    }
+    html.apple_client-panel .word_entry>.pron::before,
+    html.apple_client-panel .word_entry>.pron::after,
+    html.apple_client-panel .pron.type_uk:first-of-type::before,
+    html.apple_client-panel .pron>.pron.type_us::before,
+    html.apple_client-panel .collins_en_cn.example:not(:only-of-type)::before,
+    html.apple_client-panel .example li p:nth-child(1)::before,
+    html.apple_client-panel .example li p:nth-child(2),
+    html.apple_client-panel .note li p:nth-child(2),
+    html.apple_client-panel .st,
+    html.apple_client-panel .def_cn,
+    html.apple_client-panel .tips_box,
+    html.apple_client-panel .tips_sentence,
+    html.apple_client-panel .synonym>b:first-child,
+    html.apple_client-panel .lbl,
+    html.apple_client-panel .cit::before,
+    html.apple_client-panel .quotation-caption,
+    html.apple_client-panel .cit cite,
+    html.apple_client-panel .Title {
+        color: var(--gray-popup-dark);
+    }
+    .part_main h3 {
+        border: none;
+    }
+}

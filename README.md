@@ -127,5 +127,8 @@ sudo killall -HUP mDNSResponder
 
 8. tmux 3.1b; coc.nvim == v0.0.81
 
+9. ccald https://placeless.net/blog/macos-dictionaries
+    ./DefaultStyle.css
+
 
 ```

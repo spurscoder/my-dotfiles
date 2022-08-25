@@ -14,7 +14,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/vim-easy-align'
 
 Plug 'mg979/vim-visual-multi'
-Plug 'Lokaltog/vim-easymotion'
+" Plug 'Lokaltog/vim-easymotion'
 
 Plug 'szw/vim-maximizer'
 
@@ -38,11 +38,13 @@ Plug 'tpope/vim-eunuch'
 
 Plug 'tpope/vim-markdown'
 
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 
-" ------------------------------------------------------------------
-" ------------------------------------------------------------------
+" -
+" -
 
 " colorscheme onedark
 
@@ -118,6 +120,7 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 
+" ============================================================================
 " Tagbar
 let g:tagbar_left=1
 let g:tagbar_width=30
@@ -125,6 +128,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
 let g:tagbar_compact = 1
 
+" ============================================================================
 " Nerd Tree
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
@@ -134,15 +138,20 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
 
+" ============================================================================
 " nerdcommenter
 let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
 
+" ============================================================================
 " airline
+let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_close_button = 0
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -150,17 +159,19 @@ nmap <leader>4 <Plug>AirlineSelectTab4
 nmap <leader>5 <Plug>AirlineSelectTab5
 
 au TabLeave * let g:lasttab = tabpagenr()
-nnoremap <silent> <leader><tab> :exe "tabn ".g:lasttab<cr>
-vnoremap <silent> <leader><tab> :exe "tabn ".g:lasttab<cr>
+nnoremap <leader><tab> :exe "tabn ".g:lasttab<cr>
+vnoremap <leader><tab> :exe "tabn ".g:lasttab<cr>
 
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#nerdtree_statusline = 0  " disabled
 let g:airline_section_z = "%p%% ☰ \ue0a1:%l/%L: Col:%c"
 
+" ============================================================================
 " ease-align
 vmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" ============================================================================
 " vim-visual-multi
 let g:VM_theme = "spacegray"
 let g:VM_maps = {}
@@ -174,20 +185,47 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1 ctermbg=0
 highlight clear SignColumn
 let g:gitgutter_max_signs=9999
 
-let g:EasyMotion_smartcase = 1
-map <Leader><leader>h <Plug>(easymotion-linebackward)
-map <Leader><Leader>j <Plug>(easymotion-j)
-map <Leader><Leader>k <Plug>(easymotion-k)
-map <Leader><leader>l <Plug>(easymotion-lineforward)
-map <Leader><leader>. <Plug>(easymotion-repeat)
+" ============================================================================
+" " easymotion
+" let g:EasyMotion_smartcase = 1
+" " map <Leader><leader>h <Plug>(easymotion-linebackward)
+" " map <Leader><Leader>j <Plug>(easymotion-j)
+" " map <Leader><Leader>k <Plug>(easymotion-k)
+" " map <Leader><leader>l <Plug>(easymotion-lineforward)
+" let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
-" hightlight current words
+" " Gif config
+" map  / <Plug>(easymotion-sn)
+" " omap / <Plug>(easymotion-tn)
+
+" " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" " Without these mappings, `n` & `N` works fine. (These mappings just provide
+" " different highlight method and have some other features )
+" map  n <Plug>(easymotion-next)
+" map  N <Plug>(easymotion-prev)
+
+" " Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" " `s{char}{label}`
+" nmap s <Plug>(easymotion-overwin-f)
+" " or
+" " `s{char}{char}{label}`
+" " Need one more keystroke, but on average, it may be more comfortable.
+" nmap s <Plug>(easymotion-overwin-f2)
+
+" " Turn on case-insensitive feature
+" " let g:EasyMotion_smartcase = 1
+
+" " JK motions: Line motions
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+
+" ============================================================================
+" interestingWords hightlight current words
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
-nnoremap <silent> <leader>k :call InterestingWords('n')<cr>
-vnoremap <silent> <leader>k :call InterestingWords('v')<cr>
-nnoremap <silent> <leader>K :call UncolorAllWords()<cr>
-nnoremap <silent> n :call WordNavigation(1)<cr>
-nnoremap <silent> N :call WordNavigation(0)<cr>
+nnoremap <leader><leader>k :call InterestingWords('n')<cr>
+nnoremap <leader><leader>K :call UncolorAllWords()<cr>
+" nnoremap <silent> n :call WordNavigation(1)<cr>
+" nnoremap <silent> N :call WordNavigation(0)<cr>
 
 " Keybindings for plugin toggle
 nnoremap <F8> :set invpaste paste?<CR>
@@ -201,10 +239,7 @@ set pastetoggle=<F8>
 nnoremap <leader>v V`]
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :up<CR>
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>l :Lines<CR>
-nnoremap <leader>g :Windows<CR>
-nnoremap <leader>r :Rg<CR>
+
 nnoremap U <C-r>
 
 "Reselect visual bolck after indent/outdent.
@@ -223,30 +258,42 @@ vnoremap $ L
 
 nnoremap Y yy
 
-" easier navigation between split windows
+" ============================================================================
+" easier navigation
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" ============================================================================
 " vim-maximizer
+let g:maximizer_set_default_mapping = 1
+let g:maximizer_set_mapping_with_bang = 0
+let g:maximizer_default_mapping_key = '<F2>'
 nnoremap <F2> :MaximizerToggle<CR>
 vnoremap <F2> :MaximizerToggle<CR>gv
 inoremap <F2> <C-o>:MaximizerToggle<CR>
+
+" ============================================================================
+" auto pairs
+let g:AutoPairsShortcutToggle = ''
+
+" ============================================================================
+" fzf
+" " If installed using Homebrew
+" set rtp+=/usr/local/opt/fzf
+" " If installed using git
+" set rtp+=~/.fzf
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>l :Lines<CR>
+nnoremap <leader>g :Windows<CR>
+nnoremap <leader>r :Rg<CR>
 
 "--------------------------------------------
 " 补充
 "--------------------------------------------
 let g:go_version_warning = 0
 let g:syntastic_cpp_compiler_options = ' -std=c++11'        " support c++11
-
-" fzf
-" " If installed using Homebrew
-" set rtp+=/usr/local/opt/fzf
-" " If installed using git
-" set rtp+=~/.fzf
-"
-source ~/.config/nvim/coc_config.vim
 
 " vimdiff
 if &diff
@@ -255,13 +302,17 @@ endif
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
-      \ if ! exists("g:leave_my_cursor_position_alone") |
-      \     if line("'\"") > 0 && line ("'\"") <= line("$") |
-      \         exe "normal g'\"" |
-      \     endif |
-      \ endif
+    \ if ! exists("g:leave_my_cursor_position_alone") |
+    \     if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \         exe "normal g'\"" |
+    \     endif |
+    \ endif
 
 if !has("gui_running")
     set t_Co=256
 endif
 
+source ~/.config/nvim/coc_config.vim
+
+" brackets hightlight
+hi MatchParen cterm=underline ctermbg=none ctermfg=none

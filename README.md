@@ -103,3 +103,27 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 ```
 sudo killall -HUP mDNSResponder
 ```
+
+
+### questions
+
+```
+1. source ~/.zshrc;; git clone suggestions and highlights
+2. https://github.com/powerline/fonts install 
+3. pt mono for powerline 
+4. install brew; brew install zsh;java;autojump;
+5. install https://www.oracle.com/java/technologies/downloads/#jdk18-mac
+
+
+6. install vim-plug; and pluginstall
+
+  355  2022-08-24 19:29  brew install expect
+  360  2022-08-24 19:31  brew install teleport
+  366  2022-08-24 19:33  brew install go
+  367  2022-08-24 19:33  go install github.com/pcarrier/gauth@latest
+  370  2022-08-24 19:35  vi ~/.config/gauth.csv
+
+7. cocinstall coc-python coc-pyright coc-clangd coc-json coc-css
+
+
+```

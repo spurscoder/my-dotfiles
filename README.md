@@ -125,5 +125,7 @@ sudo killall -HUP mDNSResponder
 
 7. cocinstall coc-python coc-pyright coc-clangd coc-json coc-css
 
+8. tmux 3.1b; coc.nvim == v0.0.81
+
 
 ```

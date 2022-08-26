@@ -96,6 +96,26 @@ git config --add oh-my-zsh.hide-dirty 1  # restore 0
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+--------
+鼠标双击阈值：defaults read -g com.apple.mouse.doubleClickThreshold
+鼠标加速度：defaults read -g com.apple.mouse.scaling
+滚动速度：defaults read -g com.apple.scrollwheel.scaling
+
+如果鼠标使用有异常，可以再终端中读以上三个参数，并根据自己的需要适当调高调低
+鼠标双击阈值：defaults write -g com.apple.mouse.doubleClickThreshold 0.75
+鼠标加速度：defaults write -g com.apple.mouse.scaling 5
+滚动速度：defaults write -g com.apple.scrollwheel.scaling 0.75
+
+触控板速度(类似于鼠标)：
+> defaults read -g com.apple.trackpad.scaling
+> defaults write -g com.apple.trackpad.scaling 10
+
+https://gist.github.com/brandonb927/3195465
+
+trackpad鼠标速度提升
+https://linearmouse.org/zh-CN/
+
 ```
 
 ### hosts
@@ -109,9 +129,13 @@ sudo killall -HUP mDNSResponder
 
 ```
 1. source ~/.zshrc;; git clone suggestions and highlights
+
 2. https://github.com/powerline/fonts install 
+
 3. pt mono for powerline 
+
 4. install brew; brew install zsh;java;autojump;
+
 5. install https://www.oracle.com/java/technologies/downloads/#jdk18-mac
 
 
@@ -126,9 +150,12 @@ sudo killall -HUP mDNSResponder
 7. cocinstall coc-python coc-pyright coc-clangd coc-json coc-css
 
 8. tmux 3.1b; coc.nvim == v0.0.81
+    > brew tap-new $USER/local-tmux
+    > brew extract --version=3.1b tmux $USER/local-tmux
+    > brew install tmux@3.1b
 
-9. ccald https://placeless.net/blog/macos-dictionaries
+9. ccald
+    https://placeless.net/blog/macos-dictionaries
     ./DefaultStyle.css
-
 
 ```

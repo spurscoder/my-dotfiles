@@ -1,5 +1,6 @@
 {
     "python.linting.enabled": false,
     "pyright.disableDiagnostics": true,
-    "clangd.disableDiagnostics": true
+    "clangd.disableDiagnostics": true,
+    "pyright.inlayHints.enable": false
 }

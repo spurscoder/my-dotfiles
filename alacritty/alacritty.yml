@@ -455,7 +455,7 @@ window:
     x: 2
     y: 2
   opacity: 0.9
-  startup_mode: Maximized
+  startup_mode: Windowed
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.

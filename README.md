@@ -158,4 +158,12 @@ sudo killall -HUP mDNSResponder
     https://placeless.net/blog/macos-dictionaries
     ./DefaultStyle.css
 
+10. fzf; command line ctrl+r
+    > brew install fzf
+    > $(brew --prefix)/opt/fzf/install
+
+11. bartender4; bob
+
+12. brew install ctags  // for vim
+
 ```

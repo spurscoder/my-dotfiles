@@ -1,0 +1,40 @@
+
+## READING
+
+- [x] gnu linux-5.19  @ 2022.08.30
+- [x] facebook fastText @ 2022.08.31
+- [x] transformers
+- [x] transformers datasets
+- [x] transformers evaluate: 各种指标
+- [x] pytorch text:
+- [x] pytorch examples: 各种python && cpp 的示例
+- [x] pytorch extension-cpp: pytorch cpp && cuda compiler
+- [x] pytorch torcharrow
+- [x] pytorch fairseq: seq2seq model
+- [x] google pytest
+- [x] google googletest
+- [x] json
+- [x] microsoft LightGBM
+- [x] scikit-learn
+- [x] numpy
+- [x] seqeval
+- [x] pytorch
+- [x] nltk
+- [x] allennlp
+- [ ] lightning
+- [ ] fastai
+- [ ] spaCy
+- [ ] stanza
+- [ ] GloVe
+- [ ] pkuseg-python
+- [ ] CoreNLP
+- [ ] gensim
+- [ ] Synonyms
+- [ ] THULAC-Python
+- [ ] word2vec
+- [ ] jieba
+- [ ] HanLP
+- [ ] faiss
+- [ ] DALL-E
+- [ ] metrics
+- [ ] pytorch-metric-learning

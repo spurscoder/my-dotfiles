@@ -167,3 +167,10 @@ sudo killall -HUP mDNSResponder
 12. brew install ctags  // for vim
 
 ```
+
+
+### static pre build binary
+
+- clangd
+- ripgrep
+- fd

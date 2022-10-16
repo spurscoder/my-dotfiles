@@ -4,7 +4,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W",
     end
 )
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J",
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K",
     function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -20,14 +20,14 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J",
     end
 )
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K",
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J",
     function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
     local max = screen:frame()
 
-    f.x = 700
+    f.x = 0
     f.y = max.y
     f.w = max.w - f.x
     f.h = max.h

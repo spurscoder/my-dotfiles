@@ -440,8 +440,8 @@ schemes:
       white: "0xe1e2e3"
 
 # Apply
-colors: *maia
-# colors: *Cyberdyne
+# colors: *maia
+colors: *Cyberdyne
 
 window:
   decorations: "Buttonless"

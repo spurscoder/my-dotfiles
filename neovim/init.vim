@@ -1,3 +1,6 @@
+
+" let g:python3_host_prog = '/mnt/TTS_disk28/wangjiping01/tools/python3/bin/python3'
+
 call plug#begin('~/.config/nvim/plugged')
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
@@ -165,6 +168,9 @@ vnoremap <leader><tab> :exe "tabn ".g:lasttab<cr>
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#nerdtree_statusline = 0  " disabled
 let g:airline_section_z = "%p%% ☰ \ue0a1:%l/%L: Col:%c"
+" let g:airline_extensions = ['tabline']
+
+
 
 " ============================================================================
 " ease-align
@@ -316,3 +322,9 @@ source ~/.config/nvim/coc_config.vim
 
 " brackets hightlight
 hi MatchParen cterm=underline ctermbg=none ctermfg=none
+
+" let &termencoding=&encoding
+" set fileencodings=utf-8,gbk,gb18030,gb2312,big5
+"
+" colors:
+" /home/disk2/wangjiping01/.config/nvim/colors/apprentice.vim

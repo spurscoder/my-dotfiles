@@ -209,3 +209,68 @@ alias tree="tree -I \"*pyc|__pycache__\" -v"
 export GOPATH=$HOME/coder/go
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# from local machine
+# realpath() {
+#     echo $(cd $(dirname $1); pwd)/$(basename $1);
+# }
+# 
+# scpname() {
+#     if [ ! -n "$1" ]; then
+#         echo "scp -r audio@$HOSTNAME:$PWD"
+#     else
+#         echo "scp -r audio@$HOSTNAME:$PWD/$1"
+#     fi
+# }
+# 
+# alias cp="cp -i"
+# alias vi="nvim"
+# alias vim="nvim"
+# alias vimdiff="nvim -d"
+# 
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# 
+# DIR=/mnt/TTS_disk28/wangjiping01/tools/
+# export PATH=$DIR/tmux/bin:$PATH
+# export PATH=$DIR/vim81/bin:$PATH
+# # export PATH=$DIR/ninja-1.11.1/bin:$PATH
+# export PATH=$DIR/neovim/bin/:$PATH
+# export PATH=$DIR/bin/:$PATH
+# export PATH=$DIR/zsh/bin/:$PATH
+# export PATH=$HOME/.local/bin/:$PATH
+# 
+# # node
+# export PATH=~/.vscode-server/bin/1.8.401.70.0.1/:$PATH
+# 
+# #python 3.8
+# export PATH=$DIR/python3/bin/:$PATH
+# 
+# #python 2.7
+# export PATH=$DIR/python2.7/bin/:$PATH
+# 
+# #cmake  /mnt/TTS_disk28/wangjiping01/tools/cmake
+# export PATH=$DIR/cmake/bin:$PATH
+# export CMAKE_ROOT=$DIR/cmake
+# 
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/disk2/wangjiping01/.jumbo/lib
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/wangjiping01/.jumbo/lib
+# # export LD_LIBRARY_PATH=/mnt/TTS_disk28/wangjiping01/tools/libssl:$LD_LIBRARY_PATH
+# # export LD_LIBRARY_PATH=$DIR/libevent/lib:$LD_LIBRARY_PATH
+# # export LD_LIBRARY_PATH=$DIR/lib:$LD_LIBRARY_PATH
+# 
+# # export PATH=/home/wangjiping01/paddlecloud-cli/paddlecloud-cli/paddlecloud-cli:$PATH
+# 
+# export TMOUT=0
+# 
+# export PATH="/opt/compiler/gcc-4.8.2/bin:$PATH"
+# # export C_INCLUDE_PATH="/opt/compiler/gcc-4.8.2/include/:/usr/include/:$C_INCLUDE_PATH"
+# # export LIBRARY_PATH="/opt/compiler/gcc-4.8.2/lib64/:/usr/lib64/:$LIBRARY_PATH"
+# 
+# export EDITOR=/mnt/TTS_disk28/wangjiping01/tools/neovim/bin/nvim
+#
+#
+# bash_profile
+# exec /mnt/TTS_disk28/wangjiping01/tools/zsh/bin/zsh
+
+

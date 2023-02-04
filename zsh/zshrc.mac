@@ -52,6 +52,8 @@ DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="yyyy-mm-dd"
 SAVEHIST=10000
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=1'
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -141,6 +143,12 @@ export PATH=$HOME/coder/go/bin:$PATH
 
 export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/local/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(/opt/homebrew/bin/brew shellenv)"
+alias relay='LC_CTYPE=en_US expect $HOME/.relay.expect $user $mailpwd'
+export EDITOR=/opt/homebrew/bin/nvim
+
+export PATH="$HOME/.cargo/bin":$PATH

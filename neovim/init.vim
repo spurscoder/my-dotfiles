@@ -79,6 +79,7 @@ set wildmenu
 
 " highlight current line
 " set cursorline cursorcolumn
+set cursorline
 
 " search
 set incsearch
@@ -117,9 +118,9 @@ set smarttab
 set expandtab       " expand tab to space
 
 autocmd FileType php,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType ruby,cpp,c,cu,cuda setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
 autocmd FileType coffee,javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType python,cpp,c,cu,cuda setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 
@@ -168,9 +169,7 @@ vnoremap <leader><tab> :exe "tabn ".g:lasttab<cr>
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#nerdtree_statusline = 0  " disabled
 let g:airline_section_z = "%p%% ☰ \ue0a1:%l/%L: Col:%c"
-" let g:airline_extensions = ['tabline']
-
-
+let g:airline_extensions = ['tabline']
 
 " ============================================================================
 " ease-align

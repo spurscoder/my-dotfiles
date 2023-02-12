@@ -1,0 +1,70 @@
+format = """
+$status\
+$jobs\
+$cmd_duration\
+\t\t\
+$username\
+$hostname\
+$directory\
+\t\t\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$memory_usage\
+$env_var\
+$line_break\
+$battery\
+$character"""
+
+# prompt character
+[character]
+success_symbol = "[█](bold green)"
+error_symbol = "[█](bold red)"
+
+# battery warning
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 50
+style = "bold green"
+
+# timer
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+
+[perl]
+disabled = true
+
+[directory]
+truncation_symbol = "…/"
+
+[status]
+disabled = false
+symbol = " ✖ "
+success_symbol = " ✔️ "
+not_executable_symbol = " 🚫 "
+not_found_symbol = " 🔍"
+sigint_symbol = " ⚡"
+signal_symbol = " ⚡"
+map_symbol = true
+pipestatus = true
+
+
+
+[custom.prolog]
+command = "swipl --version | cut -d' ' -f3"
+extensions = ["pl"]
+format = "via [ v$output ](bold blue)"
+
+[custom.tex]
+command = "tex --version | head -n1 | cut -d' ' -f2"
+extensions = ["tex"]
+format = "via [烈](cyan)[v$output ](bold blue)"

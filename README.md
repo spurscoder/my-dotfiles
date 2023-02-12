@@ -129,8 +129,19 @@ sudo killall -HUP mDNSResponder
 
 ```
 1. source ~/.zshrc;; git clone suggestions and highlights
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# zsh-completions
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 2. https://github.com/powerline/fonts install 
+>> https://github.com/ryanoasis/nerd-fonts#font-installation
+```
+git clone  nerd-fonts
+./install.sh
+```
 
 3. pt mono for powerline 
 
@@ -168,10 +179,23 @@ sudo killall -HUP mDNSResponder
 
 ```
 
-
 ### static pre build binary
 
 - clangd
 - ripgrep
 - fd
 
+### Fish
+
+```
+brew install fish starship
+
+# install ohmyfish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
+fish install --path=~/.local/share/omf --config=~/.config/omf
+
+# starship config
+
+# fish config
+
+```

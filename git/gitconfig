@@ -37,4 +37,8 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/wangjiping01/.stCommitMsg
+    template = /Users/wangjiping01/.stCommitMsg
+[http]
+	proxy = http://agent.baidu.com:8118
+[https]
+	proxy = https://agent.baidu.com:8118

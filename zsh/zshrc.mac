@@ -1,6 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+autoload -U compinit
+compinit
+
+#allow tab completion in the middle of a word
+setopt COMPLETE_IN_WORD
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/wangjiping01/.oh-my-zsh
 
@@ -44,7 +50,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -52,7 +58,9 @@ DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="yyyy-mm-dd"
 SAVEHIST=10000
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=1'
+ZSH_DISABLE_COMPFIX="true"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -109,14 +117,26 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-
 # miniconda3
 export PATH="/Users/wangjiping01/coder/miniconda3/bin:$PATH"
 export LC_ALL=en_US.UTF-8
 
 realpath() {
-    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+    echo $(cd $(dirname $1); pwd)/$(basename $1);
 }
+
+scpname() {
+    if [ ! -n "$1" ]; then
+        echo "scp -r audio@$HOSTNAME:$PWD"
+    else
+        echo "scp -r audio@$HOSTNAME:$PWD/$1"
+    fi
+}
+
+# export EDITOR=/mnt/TTS_disk28/wangjiping01/tools/neovim/bin/nvim
+
+# unset TMOUT
+
 
 alias cp="cp -i"
 alias alacritty="/Applications/Alacritty.app/Contents/MacOS/alacritty"
@@ -124,6 +144,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ctrl-r escape escape ctrl-s backspace
 #

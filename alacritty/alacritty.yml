@@ -1,7 +1,9 @@
 ### Define your various colour-schemes here, and then choose one with
 ### the 'colors:' setting below.
-schemes:
+import:
+  - ~/.config/alacritty/themes/themes/dark_pastels.yaml
 
+schemes:
   ### Edge (Light variant)
   edge_light:	  &edge_light
     primary:
@@ -441,7 +443,13 @@ schemes:
 
 # Apply
 # colors: *maia
-colors: *Cyberdyne
+# colors: *my3
+# colors: *Cyberdyne
+# colors: *Symfonic
+# colors: *everforest_dark_soft
+# colors: *shusia
+# colors: *everforest_light_soft
+colors: *my_light_solarized
 
 window:
   decorations: "Buttonless"
@@ -454,7 +462,7 @@ window:
   padding:
     x: 2
     y: 2
-  opacity: 0.98
+  opacity: 1.0
   startup_mode: Windowed
 
 scrolling:

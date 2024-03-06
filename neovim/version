@@ -1,0 +1,15 @@
+> nvim -v
+nvim -v
+NVIM v0.7.2
+Build type: Release
+LuaJIT 2.1.0-beta3
+Compiled by brew@HMBRW-A-001-M1-005.local
+
+Features: +acl +iconv +tui
+See ":help feature-compile"
+
+   system vimrc file: "$VIM/sysinit.vim"
+  fall-back for $VIM: "/opt/homebrew/Cellar/neovim/0.7.2_1/share/nvim"
+
+Run :checkhealth for more info
+

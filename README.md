@@ -177,6 +177,9 @@ git clone  nerd-fonts
 
 12. brew install ctags  // for vim
 
+13. colors:
+    git@github.com:alacritty/alacritty-theme.git
+    git@github.com:mbadolato/iTerm2-Color-Schemes.git
 ```
 
 ### static pre build binary
@@ -193,6 +196,12 @@ brew install fish starship
 # install ohmyfish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
+
+https://github.com/alacritty/alacritty/issues/3962
+
+> omf theme default
+> omf install lavender
+> curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # starship config
 

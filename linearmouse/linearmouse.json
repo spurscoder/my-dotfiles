@@ -1,42 +1,41 @@
 {
-  "$schema" : "https:\/\/app.linearmouse.org\/schema\/0.7.3",
   "schemes" : [
     {
       "if" : {
         "device" : {
           "productID" : "0x341",
-          "vendorID" : "0x5ac",
           "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x5ac",
           "category" : "trackpad"
         }
       },
       "pointer" : {
-        "speed" : 0.19,
-        "acceleration" : 0.9994
+        "acceleration" : 0.9994,
+        "speed" : 0.19
       }
     },
     {
-      "if" : {
-        "device" : {
-          "productID" : "0x20",
-          "category" : "mouse",
-          "productName" : "Razer Abyssus 1800",
-          "vendorID" : "0x1532"
-        }
-      },
       "pointer" : {
         "speed" : 0.17,
         "acceleration" : 3.7806
+      },
+      "if" : {
+        "device" : {
+          "vendorID" : "0x1532",
+          "productID" : "0x20",
+          "productName" : "Razer Abyssus 1800",
+          "category" : "mouse"
+        }
       }
     },
     {
       "if" : {
         "device" : {
           "productID" : "0xb016",
-          "productName" : "Bluetooth Mouse M336\/M337\/M535",
-          "category" : "mouse",
           "serialNumber" : "34-88-5d-b8-2a-ed",
-          "vendorID" : "0x46d"
+          "category" : "mouse",
+          "vendorID" : "0x46d",
+          "productName" : "Bluetooth Mouse M336\/M337\/M535"
         }
       },
       "pointer" : {
@@ -46,19 +45,20 @@
     },
     {
       "pointer" : {
-        "acceleration" : 5,
-        "speed" : 0.2,
-        "disableAcceleration" : false
+        "acceleration" : 5.332,
+        "disableAcceleration" : false,
+        "speed" : 0.17
       },
       "if" : {
         "device" : {
-          "category" : "mouse",
           "serialNumber" : "34:88:5D:B8:2A:ED",
-          "productID" : "0xb016",
           "vendorID" : "0x46d",
-          "productName" : "Bluetooth Mouse M336\/M337\/M535"
+          "productName" : "Bluetooth Mouse M336\/M337\/M535",
+          "productID" : "0xb016",
+          "category" : "mouse"
         }
       }
     }
-  ]
+  ],
+  "$schema" : "https:\/\/app.linearmouse.org\/schema\/0.7.3"
 }

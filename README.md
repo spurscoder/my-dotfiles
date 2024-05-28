@@ -208,3 +208,6 @@ https://github.com/alacritty/alacritty/issues/3962
 # fish config
 
 ```
+
+
+ssh -t USER@HOSTNAME /bin/sh

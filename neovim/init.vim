@@ -1,6 +1,8 @@
 
 " let g:python3_host_prog = '/mnt/TTS_disk28/wangjiping01/tools/python3/bin/python3'
 
+" set rtp +=~/.vim
+
 call plug#begin('~/.config/nvim/plugged')
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
@@ -178,7 +180,7 @@ nmap ga <Plug>(EasyAlign)
 
 " ============================================================================
 " vim-visual-multi
-let g:VM_theme = "spacegray"
+let g:VM_theme = "ocean"  " spacegray
 let g:VM_maps = {}
 let g:VM_maps["Select Cursor Down"] = '<M-C-Down>'      " start selecting down
 let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>'        " start selecting up

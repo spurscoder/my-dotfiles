@@ -1,7 +1,7 @@
 # -*- sh -*- vim:set ft=sh ai et sw=4 sts=4:
 # It might be bash like, but I can't have my co-workers knowing I use zsh
 function prompt_char {
-    echo "%{$fg_bold[green]%}> "
+    echo "%{$fg_bold[blue]%}> "
 }
 PROMPT='%{$fg[green]%}%n@%m:%{$fg_bold[blue]%}%4~ $(git_prompt_info)
 $(prompt_char)%{$reset_color%}'

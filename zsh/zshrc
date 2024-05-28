@@ -1,19 +1,54 @@
+#
+# .zshrc is sourced in interactive shells.
+# It should contain commands to set up aliases,
+# functions, options, key bindings, etc.
+#
+#
+
+autoload -U compinit
+compinit
+
+#allow tab completion in the middle of a word
+setopt COMPLETE_IN_WORD
+
+## keep background processes at full speed
+#setopt NOBGNICE
+## restart running processes on exit
+#setopt HUP
+
+## history
+#setopt APPEND_HISTORY
+## for sharing history between zsh processes
+#setopt INC_APPEND_HISTORY
+#setopt SHARE_HISTORY
+
+## never ever beep ever
+#setopt NO_BEEP
+
+## automatically decide when to page a list of completions
+#LISTMAX=0
+
+## disable mail checking
+#MAILCHECK=0
+
+# autoload -U colors
+#colors
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/wangjp/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="risto"
+ZSH_THEME="risto"  # lambda risto maran
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
@@ -56,6 +91,9 @@ HISTFILE=~/.zsh_history
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
+ZSH_DISABLE_COMPFIX="true"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -67,12 +105,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  autojump
   zsh-autosuggestions
   zsh-syntax-highlighting
   extract
   z
-  git ssh-agent
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,6 +142,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+realpath() {
+    echo $(cd $(dirname $1); pwd)/$(basename $1);
+}
+
+scpname() {
+    if [ ! -n "$1" ]; then
+        echo "scp -r audio@$HOSTNAME:$PWD"
+    else
+        echo "scp -r audio@$HOSTNAME:$PWD/$1"
+    fi
+}
 #------------------------------------- my software ------------------------------------------
 
 if [ $HOSTNAME = 'zj034' ]; then
@@ -193,6 +240,58 @@ elif [ $HOSTNAME = 'zj186.corp.yodao.com' ]; then
 fi
 
 alias cp="cp -i"
+alias vi="nvim"
+alias vim="nvim"
+alias vimdiff="nvim -d"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+DIR=/mnt/TTS_disk28/wangjiping01/tools/
+export PATH=$DIR/tmux/bin:$PATH
+export PATH=$DIR/vim81/bin:$PATH
+# export PATH=$DIR/ninja-1.11.1/bin:$PATH
+export PATH=$DIR/neovim/bin/:$PATH
+export PATH=$DIR/bin/:$PATH
+export PATH=$DIR/zsh/bin/:$PATH
+export PATH=$HOME/.local/bin/:$PATH
+export PATH=$DIR/mysql/bin:$PATH
+
+# fish
+export PATH=$DIR/fish/bin:$PATH
+
+# node
+export PATH=~/.vscode-server/bin/1.8.401.70.0.1/:$PATH
+export PATH=~/.vscode-server/bin/1.8.401.70.0.9/:$PATH
+export PATH=~/.vscode-server/bin/1.8.401.83.1.02/:$PATH
+
+#python 3.8
+export PATH=$DIR/python3/bin/:$PATH
+
+#python 2.7
+export PATH=$DIR/python2.7/bin/:$PATH
+
+#cmake  /mnt/TTS_disk28/wangjiping01/tools/cmake
+export PATH=$DIR/cmake/bin:$PATH
+export CMAKE_ROOT=$DIR/cmake
+
+export PATH=$DIR/rust-1.63.0/bin:$PATH
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/disk2/wangjiping01/.jumbo/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/wangjiping01/.jumbo/lib
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mnt/TTS_disk28/wangjiping01/tools/pcre2/lib
+# export LD_LIBRARY_PATH=/mnt/TTS_disk28/wangjiping01/tools/libssl:$LD_LIBRARY_PATH
+# export LD_LIBRARY_PATH=$DIR/libevent/lib:$LD_LIBRARY_PATH
+# export LD_LIBRARY_PATH=$DIR/lib:$LD_LIBRARY_PATH
+
+# export PATH=/home/wangjiping01/paddlecloud-cli/paddlecloud-cli/paddlecloud-cli:$PATH
+
+export TMOUT=0
+
+export PATH="/opt/compiler/gcc-4.8.2/bin:$PATH"
+# export C_INCLUDE_PATH="/opt/compiler/gcc-4.8.2/include/:/usr/include/:$C_INCLUDE_PATH"
+# export LIBRARY_PATH="/opt/compiler/gcc-4.8.2/lib64/:/usr/lib64/:$LIBRARY_PATH"
+
+export EDITOR=/mnt/TTS_disk28/wangjiping01/tools/neovim/bin/nvim
 alias tree="tree -I \"*pyc|__pycache__\" -v"
 
 # ctrl-r escape escape ctrl-s backspace

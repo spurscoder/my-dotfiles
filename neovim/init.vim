@@ -45,6 +45,8 @@ Plug 'tpope/vim-markdown'
 
 Plug 'jiangmiao/auto-pairs'
 
+" Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 

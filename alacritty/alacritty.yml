@@ -453,9 +453,9 @@ colors: *my_light_solarized
 
 window:
   decorations: "Buttonless"
-  dimensions:
-    columns: 140
-    lines: 100
+  # dimensions:
+    # columns: 140
+    # lines: 100
   # position:
     # x: 0
     # y: 0
